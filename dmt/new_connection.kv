@@ -1,0 +1,53 @@
+#: set connection_field_height 0.07
+<NewConnection>:
+    StackLayout:
+        Spinner:
+            id: menuSpinner
+            text: 'New connection'
+            size_hint: [1.0, connection_field_height]
+            values: 'New connection', 'Main', 'Connections'
+            on_text: root.navigate(self.text)
+        Label:
+            id: statusField
+            size_hint: [1.0, connection_field_height]
+            text: 'STATUS: Idle'
+        Label:
+            text: 'Host'
+            size_hint: [1, connection_field_height]
+        TextInput:
+            id: hostInput
+            size_hint: [1, connection_field_height]
+        Label:
+            text: 'Port'
+            size_hint: [1, connection_field_height]
+        TextInput:
+            id: portInput
+            input_filter: 'int'
+            text: '22'
+            size_hint: [1, connection_field_height]
+        Label:
+            text: 'Alias'
+            size_hint: [1, connection_field_height]
+        TextInput:
+            id: aliasInput
+            size_hint: [1, connection_field_height]
+        Label:
+            text: 'Username'
+            size_hint: [1, connection_field_height]
+        TextInput:
+            id: usernameInput
+            size_hint: [1, connection_field_height]
+        Label:
+            text: 'Password'
+            size_hint: [1, connection_field_height]
+        TextInput:
+            id: passwdInput
+            size_hint: [1, connection_field_height]
+            password: True
+        Button:
+            id: connectButton
+            text: 'Connect'
+            on_release: root.connect()
+            size_hint: [1, connection_field_height]
+
+        

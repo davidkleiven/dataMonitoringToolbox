@@ -1,0 +1,21 @@
+<MainScreen>:
+    StackLayout:
+        Spinner:
+            id: menuSpinner
+            size_hint: [1.0, 0.1]
+            text: 'Main'
+            values: 'Main', 'New connection', 'Connections'
+            on_text: root.navigate(self.text)
+        Spinner:
+            id: typeSpinner
+            size_hint: [1.0, 0.1]
+            text: 'Command'
+            values: 'Command', 'Plot', 'Stats'
+        TextInput:
+            id: cmdField
+            size_hint: [1.0, 0.1]
+        Button:
+            id: executeButton
+            text: 'Exec'
+            size_hint: [1.0, 0.1]
+            on_release: root.execute_cmd()
