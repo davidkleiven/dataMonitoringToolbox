@@ -25,6 +25,9 @@ class NewConnection(Screen):
         try:
             app.connection.connect(hostname=host, port=port, password=passwd, username=username)
             self.ids.statusField.text = 'STATUS: Successfully connected'
+            sm = app.screen_manager
+            sm.transition.direction = 'right'
+            sm.current = 'MainScreen'
         except Exception as exc:
             self.ids.statusField.text = 'STATUS: Could not connect'
             print(str(exc))
